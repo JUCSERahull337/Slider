@@ -34,9 +34,9 @@ const showImages = (images) => {
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
     gallery.appendChild(div);
     toggle(true,'footer');
-
-    toggle(false,'spinner');
+    
     })
+    toggle(false,'spinner');
 
 }
 
@@ -44,8 +44,6 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
     
   let element = event.target;
-  
-
   
   element.classList.add('added');
  
@@ -58,10 +56,9 @@ const selectItem = (event, img) => {
   }
   
   else{
-      const imgIndex= sliders.indexOf(img);
-      sliders.splice(imgIndex,1);
-      element.classList.remove('added')
-
+    const imgIndex= sliders.indexOf(img);
+    sliders.splice(imgIndex,1);
+    element.classList.remove('added')
   }
 }
 var timer
@@ -88,7 +85,7 @@ const createSlider = () => {
   let duration =document.getElementById('duration').value;
   
   if(duration<=0){
-    time=1000;
+    const time=1000;
     duration=time;
 
   }
@@ -156,6 +153,7 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
+
   let buttonId = document.getElementById('search-btn');
 
     let fieldTxt = document.getElementById('search');
