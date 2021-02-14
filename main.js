@@ -33,6 +33,8 @@ const showImages = (images) => {
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
     gallery.appendChild(div);
+    toggle(true,'footer');
+
     toggle(false,'spinner');
     })
 
@@ -143,8 +145,7 @@ searchBtn.addEventListener('click', function () {
     const search = document.getElementById('search');
     getImages(search.value)
     sliders.length = 0;
-    toggle(true,'footer');
-    document.getElementById('search').value='';
+    // toggle(true,'footer');
     }
     else{
         alert('Please enter something to search ');
