@@ -46,26 +46,29 @@ const selectItem = (event, img) => {
     //console.log(event);
   let element = event.target;
   //console.log(element)
-  console.log('before len',sliders.length);
+  //console.log('before len',sliders.length);
 
   
   element.classList.add('added');
  
   let item = sliders.indexOf(img);
-  console.log('before item',item);
+  //console.log('before item',item);
   if (item === -1) {
-      console.log('after item',item)
+      //console.log('after item',item)
     sliders.push(img);
-    console.log('after len',sliders.length)
+    //console.log('after len',sliders.length)
   }
   
   else{
+      const imgIndex= sliders.indexOf(img);
+      sliders.splice(imgIndex,1);
+      element.classList.remove('added')
     //alert('Hey, Already added !')
-    console.log('before',item)
-    element.classList.remove('added');
-    console.log('after',item)
-    console.log('after len', sliders.length)
-    console.log('blabla')
+    //console.log('before',item)
+    //element.classList.remove('added');
+    //console.log('after',item)
+    //console.log('after len', sliders.length)
+    //console.log('blabla')
 
   }
 }
@@ -196,9 +199,6 @@ const toggleSpinner = (show) =>{
     }
     else{
         spinner.classList.add('d-none');
-    }
-    
-    
-    
+    }  
 }
 
