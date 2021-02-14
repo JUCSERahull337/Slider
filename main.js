@@ -144,6 +144,7 @@ searchBtn.addEventListener('click', function () {
     getImages(search.value)
     sliders.length = 0;
     toggle(true,'footer');
+    document.getElementById('search').value='';
     }
     else{
         alert('Please enter something to search ');
